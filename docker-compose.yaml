@@ -17,7 +17,7 @@ services:
     container_name: node
     build:
       context: .
-    command: npm run start
+    command: npm run nodemon
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules/
