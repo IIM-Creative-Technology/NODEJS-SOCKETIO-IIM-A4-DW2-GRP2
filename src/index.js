@@ -15,7 +15,7 @@ httpServer.listen(port, () => {
 
 // Route
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/views/socket-test.html'));
+  res.sendFile(path.join(__dirname, '../views/socket-test.html'));
 })
 
 // Socket IO
