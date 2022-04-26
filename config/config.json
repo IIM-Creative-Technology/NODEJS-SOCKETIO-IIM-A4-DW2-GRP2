@@ -3,7 +3,8 @@
     "username": "postgres",
     "password": "postgres",
     "database": "nodejspg",
-    "host": "localhost",
+    "host": "127.0.0.1",
+    "port": "5431",
     "dialect": "postgres"
   },
   "test": {
@@ -11,13 +12,15 @@
     "password": "postgres",
     "database": "nodejspg",
     "host": "127.0.0.1",
+    "port": "5431",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
     "password": "postgres",
     "database": "nodejspg",
-    "host": "localhost",
+    "host": "127.0.0.1",
+    "port": "5431",
     "dialect": "postgres"
   }
 }
