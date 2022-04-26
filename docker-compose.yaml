@@ -12,3 +12,16 @@ services:
       - POSTGRES_DB=nodejspg
     volumes:
       - ./pgdata:/var/lib/postgresql/data
+
+  node:
+    container_name: node
+    build:
+      context: .
+    command: npm run start
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules/
+    depends_on:
+      - db
+    ports:
+      - '3000:3000'
