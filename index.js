@@ -1,4 +1,5 @@
 const port = 3000;
+const path = require('path');
 
 const express = require('express');
 const { createServer } = require("http");
@@ -12,11 +13,17 @@ httpServer.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 });
 
+// Route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '/views/socket-test.html'));
+})
+
 // Socket IO
 io.on('connection', socket => {
 
   socket.on('to-server', () => {
-    console.log('Socket received !');
+    console.log('Socket received from client !');
+    socket.emit('to-client');
   });
 
 });
