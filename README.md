@@ -1,5 +1,6 @@
 # NODEJS-SOCKETIO-IIM-A4-DW2-GRP2
-
+Online version is deploy on Heroku : https://nodejs-iim-a4-grp2.herokuapp.com/
+- -------------
 **Table of Contents**
 -------------
 * [Getting Started](#getting-started)
