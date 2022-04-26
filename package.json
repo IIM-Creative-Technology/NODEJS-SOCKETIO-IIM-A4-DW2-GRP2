@@ -1,10 +1,12 @@
 {
   "scripts": {
     "commit": "cz",
-    "start": "node index.js"
+    "start": "node index.js",
+    "nodemon": "nodemon index.js"
   },
   "dependencies": {
     "express": "^4.17.3",
+    "nodemon": "^2.0.15",
     "socket.io": "^4.5.0"
   },
   "devDependencies": {
