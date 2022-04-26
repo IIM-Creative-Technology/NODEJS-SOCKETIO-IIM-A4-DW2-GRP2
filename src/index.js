@@ -1,5 +1,5 @@
 const port = 3000;
-const path = require('path');
+const router = require('../routes/router');
 
 const express = require('express');
 const { createServer } = require("http");
@@ -12,11 +12,7 @@ const io = new Server(httpServer);
 httpServer.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 });
-
-// Route
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../views/socket-test.html'));
-})
+app.use('/', router);
 
 // Socket IO
 io.on('connection', socket => {
