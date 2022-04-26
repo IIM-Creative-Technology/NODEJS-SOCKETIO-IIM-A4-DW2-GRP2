@@ -5,10 +5,13 @@
   },
   "dependencies": {
     "express": "^4.17.3",
+    "pg": "^8.7.3",
+    "sequelize": "^6.19.0",
     "socket.io": "^4.5.0"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "sequelize-cli": "^6.4.1"
   },
   "config": {
     "commitizen": {
