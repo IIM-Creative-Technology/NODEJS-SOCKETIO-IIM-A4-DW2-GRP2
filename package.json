@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "commit": "cz"
+    "commit": "cz",
+    "start": "node index.js"
   },
   "dependencies": {
     "express": "^4.17.3",
