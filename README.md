@@ -6,6 +6,7 @@ Online version is deploy on Heroku : https://nodejs-iim-a4-grp2.herokuapp.com/
 * [Getting Started](#getting-started)
   - [Required](#required)
   - [NPM Commands](#npm-commands)
+  - [PR template](#pr-template)
 ### Getting Started
 #### Required
 - docker (https://www.docker.com/get-started/)
