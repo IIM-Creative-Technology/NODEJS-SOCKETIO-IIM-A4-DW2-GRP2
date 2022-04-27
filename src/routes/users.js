@@ -7,9 +7,15 @@ router.post("/", (req, res) => {
   res.send("CREATE user");
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", async (req, res) => {
   // #swagger.summary = 'Get user by id'
   // #swagger.tags = ['Users']
+  const user = await User.findAll({
+    where: {
+      id: req.params.id
+    }
+  });
+  console.log("User:", JSON.stringify(user));
   res.send(req.params);
 });
 
