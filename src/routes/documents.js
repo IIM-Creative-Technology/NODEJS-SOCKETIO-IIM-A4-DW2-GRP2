@@ -42,7 +42,7 @@ router.delete("/:id", async (req, res) => {
     } */
 
     try {
-        await documentService.deleteUser(req.params.id)
+        await documentService.deleteDocument(req.params.id)
         res.send()
     } catch (error) {
         res.status(400);
