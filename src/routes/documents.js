@@ -13,4 +13,10 @@ router.post("/", (req, res) => {
         res.status(400);
         res.send("An error occured while creating document");
     }
+
+    router.get("/:id", (req, res) => {
+        // #swagger.summary = 'Get document by id'
+        // #swagger.tags = ['Documents']
+        res.send(req.params);
+    });
 });
