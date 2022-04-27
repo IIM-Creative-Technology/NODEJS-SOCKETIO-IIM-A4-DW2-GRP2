@@ -15,7 +15,7 @@ class UserService {
 
   async deleteUser(id) {
     
-    const deleteUser = User.destroy({
+    const deleteUser = await User.destroy({
       where: {
         id: id
       },
