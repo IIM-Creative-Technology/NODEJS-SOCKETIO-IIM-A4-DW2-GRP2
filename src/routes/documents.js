@@ -31,3 +31,21 @@ router.get("/", async (req, res) => {
         res.send({message: "An error occured while searching for documents"})
     }
 });
+
+router.delete("/:id", async (req, res) => {
+    // #swagger.summary = 'Delete document by id'
+    // #swagger.tags = ['Documents']
+    /* #swagger.parameters['parameterName'] = {
+          offset: <integer>,
+          limit: <integer>,
+          search: <string>,
+    } */
+
+    try {
+        await documentService.deleteUser(req.params.id)
+        res.send()
+    } catch (error) {
+        res.status(400);
+        res.send("An error occured when deleting document");
+    }
+});
