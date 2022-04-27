@@ -21,7 +21,7 @@ class UserService {
       },
     })
 
-    return deleteUser
+    return await deleteUser
   }
 }
 

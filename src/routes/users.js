@@ -32,7 +32,7 @@ router.delete("/:id", (req, res) => {
   // #swagger.tags = ['Users']
   try {
     const result = userService.deleteUser(req.params.id);
-    res.send("delete success")
+    res.send()
   } catch (error) {
     res.status(400);
     res.send("Une erreur est survenue lors de la suppression de l'utilisateur");
