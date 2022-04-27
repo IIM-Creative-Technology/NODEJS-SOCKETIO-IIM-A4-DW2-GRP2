@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const User = require("../../models/user");
 
 router.post("/", (req, res) => {
   // #swagger.summary = 'Create a new user';
@@ -12,9 +13,11 @@ router.get("/:id", (req, res) => {
   res.send(req.params);
 });
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
   // #swagger.summary = 'Get all users'
   // #swagger.tags = ['Users']
+  const users = await User.findAll();
+  console.log("All users:", JSON.stringify(users));
   res.send("get users");
 });
 
