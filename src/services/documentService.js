@@ -31,6 +31,14 @@ class DocumentService{
             limit
         })
     }
+
+    async deleteDocument(id) {
+        return await Document.destroy({
+            where: {
+                id: id
+            },
+        })
+    }
 }
 
 module.exports = DocumentService;
