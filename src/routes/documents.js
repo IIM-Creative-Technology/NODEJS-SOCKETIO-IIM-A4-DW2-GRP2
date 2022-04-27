@@ -19,4 +19,15 @@ router.post("/", (req, res) => {
         // #swagger.tags = ['Documents']
         res.send(req.params);
     });
+
+    router.get("/", async (req, res) => {
+        // #swagger.summary = 'Search users'
+        // #swagger.tags = ['Users']
+        try {
+            res.send(await documentService.searchDocuments(req.query));
+        } catch (error) {
+            res.status(400);
+            res.send({message: "An error occured while searching for documents"})
+        }
+    });
 });
