@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     creatorId: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'Document',
+    modelName: 'document',
   });
   return document;
 };
