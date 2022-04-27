@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     password: DataTypes.STRING,
     isAdmin:{
-      type:DataTypes.BOOL,
+      type:DataTypes.BOOLEAN,
       defaultValue:false,
     }
   }, {
