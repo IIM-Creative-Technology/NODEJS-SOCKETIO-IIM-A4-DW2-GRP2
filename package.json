@@ -15,7 +15,9 @@
     "pg": "^8.7.3",
     "sequelize": "^6.19.0",
     "socket.io": "^4.5.0",
-    "supertest": "^6.2.2"
+    "supertest": "^6.2.2",
+    "swagger-autogen": "^2.21.1",
+    "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0",
