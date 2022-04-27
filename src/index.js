@@ -10,6 +10,18 @@ const { Server } = require("socket.io");
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer);
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./docs/swagger.json");
+const docRouter = express.Router();
+
+app.get("/api/ping", (req, res) => {
+  res.send("API is up and running!");
+});
+
+docRouter.use("/swagger", swaggerUi.serve);
+docRouter.get("/swagger", swaggerUi.setup(swaggerDocument));
+
+app.use("/docs", docRouter);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
