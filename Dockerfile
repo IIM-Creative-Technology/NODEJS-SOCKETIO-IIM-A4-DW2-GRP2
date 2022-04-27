@@ -1,8 +1,14 @@
 FROM node:18-alpine
 
 WORKDIR /usr/src/app
-COPY package*.json .
+
+RUN npm cache clean --force
+RUN rm -rf node_modules
+
+COPY package.json .
 
 RUN npm install
 
-COPY . .
+COPY ./ .
+
+CMD npm start
