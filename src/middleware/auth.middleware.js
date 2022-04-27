@@ -13,10 +13,14 @@ const auth = (req, res, next) => {
     try {
         const authHeader = req.headers.authorization
         if(!authHeader){
-            res.status(401).send('You are not logged in');
+            res.status(401).send({message:'You are not logged in'});
+            return;
         }
         const token = authHeader.split(' ')[1];
         jwt.verify(token, jwtSecret, async (err, decoded) => {
+            if(!decoded?.id){
+                res.status(400).send({message: 'Unable to verify token'})
+            }
             const user = await userService.findUserById(decoded.id);
             if (!user) {
                 res.status(404).send({message: "User not found"});
@@ -27,7 +31,6 @@ const auth = (req, res, next) => {
         });
     } catch(error) {
         res.status(401).send(error);
-        next()
     }
 };
 
