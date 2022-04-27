@@ -7,6 +7,7 @@ Online version is deploy on Heroku : https://nodejs-iim-a4-grp2.herokuapp.com/
   - [Required](#required)
   - [NPM Commands](#npm-commands)
   - [PR template](#pr-template)
+  - [API documentation](#api-documentation)
 ### Getting Started
 #### Required
 - docker (https://www.docker.com/get-started/)
@@ -42,4 +43,11 @@ docker-compose up --build
 | New feature?  | yes/no
 | Deprecations? | yes/no
 | Tickets       | Ticket #/no (if from ticket specify wich one)
+```
+
+#### API documentation
+
+A swagger file is add to this project with all the api documentation to access it go to :
+```bash
+localhost:PORT/docs/swagger
 ```
