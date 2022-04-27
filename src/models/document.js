@@ -3,17 +3,19 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Document extends Model {
+  class document extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-
+      document.belongsTo(models.User,{
+        foreignKey:'creatorId',
+      })
     }
   }
-  Document.init({
+  document.init({
     uri: DataTypes.STRING,
     name: DataTypes.STRING,
     creatorId: DataTypes.INTEGER
@@ -21,5 +23,5 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Document',
   });
-  return Document;
+  return document;
 };
