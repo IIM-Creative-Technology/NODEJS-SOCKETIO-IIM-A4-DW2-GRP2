@@ -12,6 +12,14 @@ class UserService {
 
     return await newUser.save();
   }
+
+  async deleteUser(id) {
+    return await User.destroy({
+      where: {
+        id: id
+      },
+    })
+  }
 }
 
 module.exports = UserService;

@@ -27,10 +27,16 @@ router.get("/", (req, res) => {
   res.send("get users");
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", async (req, res) => {
   // #swagger.summary = 'Delete user by id'
   // #swagger.tags = ['Users']
-  res.send("DELETE USER");
+  try {
+    await userService.deleteUser(req.params.id)
+    res.send()
+  } catch (error) {
+    res.status(400);
+    res.send("Une erreur est survenue lors de la suppression de l'utilisateur");
+  }
 });
 
 module.exports = router;
