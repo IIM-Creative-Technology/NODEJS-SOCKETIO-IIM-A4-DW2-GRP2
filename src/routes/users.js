@@ -80,6 +80,36 @@ router.get("/", async (req, res) => {
     }
 });
 
+router.patch("/:id", authJwt, async (req, res) => {
+    // #swagger.summary = 'Update user by id'
+    // #swagger.tags = ['Users']
+    /* #swagger.parameters['parameterName'] = {
+          email: <string>,
+          firstName: <string>,
+          lastName: <string>,
+          password: <string>
+    } */
+    try {
+        const user = await userService.findUserById(req.params.id);
+
+        if(user){
+            if(user.id !== req.user.id){
+                res.status(403).send({message:'Not authorized'})
+                return
+            }
+            const result = await userService.updateUser(user, req.body);
+            result.password = undefined;
+            res.send(result);
+        }else{
+            res.status(404).send({message: 'User not found'});
+        }
+
+    } catch (error) {
+        res.status(500);
+        res.send("An error occured when deleting user");
+    }
+});
+
 router.delete("/:id", authJwt, async (req, res) => {
     // #swagger.summary = 'Delete user by id'
     // #swagger.tags = ['Users']

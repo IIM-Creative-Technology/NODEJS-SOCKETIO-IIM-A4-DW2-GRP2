@@ -29,9 +29,6 @@ class UserService {
 
     async findUserByEmail(email){
         return await User.findOne({
-            attributes: {
-                exclude: 'password'
-            },
             where: {
                 email
             }
@@ -60,6 +57,18 @@ class UserService {
             offset,
             limit
         })
+    }
+
+    async updateUser(user, patch) {
+        user.set({
+            ...patch
+        });
+
+        if(patch.password){
+            user.password  = bcrypt.hashSync(user.password, 12);
+        }
+
+        return await user.save()
     }
 
     async deleteUser(id) {
