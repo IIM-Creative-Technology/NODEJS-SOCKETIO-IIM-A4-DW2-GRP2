@@ -30,7 +30,13 @@ router.get("/", (req, res) => {
 router.delete("/:id", (req, res) => {
   // #swagger.summary = 'Delete user by id'
   // #swagger.tags = ['Users']
-  res.send("DELETE USER");
+  try {
+    const result = userService.deleteUser(req.params.id);
+    res.send("delete success")
+  } catch (error) {
+    res.status(400);
+    res.send("Une erreur est survenue lors de la suppression de l'utilisateur");
+  }
 });
 
 module.exports = router;
