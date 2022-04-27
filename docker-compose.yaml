@@ -24,6 +24,15 @@ services:
       - db
     ports:
       - "3000:3000"
+  pgadmin:
+    container_name: pgadmin4.1_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - "5050:80"
 
 volumes:
   pg-data:
