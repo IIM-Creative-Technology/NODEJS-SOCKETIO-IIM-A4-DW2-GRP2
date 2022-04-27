@@ -14,14 +14,11 @@ class UserService {
   }
 
   async deleteUser(id) {
-    
-    const deleteUser = User.destroy({
+    return await User.destroy({
       where: {
         id: id
       },
     })
-
-    return await deleteUser
   }
 }
 

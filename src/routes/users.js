@@ -27,11 +27,11 @@ router.get("/", (req, res) => {
   res.send("get users");
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", async (req, res) => {
   // #swagger.summary = 'Delete user by id'
   // #swagger.tags = ['Users']
   try {
-    const result = userService.deleteUser(req.params.id);
+    await userService.deleteUser(req.params.id)
     res.send()
   } catch (error) {
     res.status(400);
