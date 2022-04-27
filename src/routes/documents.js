@@ -13,21 +13,21 @@ router.post("/", (req, res) => {
         res.status(400);
         res.send("An error occured while creating document");
     }
+});
 
-    router.get("/:id", (req, res) => {
-        // #swagger.summary = 'Get document by id'
-        // #swagger.tags = ['Documents']
-        res.send(req.params);
-    });
+router.get("/:id", (req, res) => {
+    // #swagger.summary = 'Get document by id'
+    // #swagger.tags = ['Documents']
+    res.send(req.params);
+});
 
-    router.get("/", async (req, res) => {
-        // #swagger.summary = 'Search users'
-        // #swagger.tags = ['Users']
-        try {
-            res.send(await documentService.searchDocuments(req.query));
-        } catch (error) {
-            res.status(400);
-            res.send({message: "An error occured while searching for documents"})
-        }
-    });
+router.get("/", async (req, res) => {
+    // #swagger.summary = 'Search users'
+    // #swagger.tags = ['Users']
+    try {
+        res.send(await documentService.searchDocuments(req.query));
+    } catch (error) {
+        res.status(400);
+        res.send({message: "An error occured while searching for documents"})
+    }
 });
