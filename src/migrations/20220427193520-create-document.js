@@ -15,7 +15,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       creatorId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'users',
+          key: 'id',
+          as: 'creatorId',
+        }
       },
       createdAt: {
         allowNull: false,
