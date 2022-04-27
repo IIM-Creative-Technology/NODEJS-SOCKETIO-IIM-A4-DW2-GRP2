@@ -10,3 +10,5 @@ const User = sequelize.define("user", {
     await sequelize.sync({force: true});
     // Code here
 })();
+
+module.exports = User;
