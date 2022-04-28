@@ -1,7 +1,8 @@
 const {DataTypes} = require("sequelize");
 const {Op} = require("sequelize");
 const sequelize = require("../models").sequelize;
-
+const fs = require('fs');
+const bcrypt = require("bcryptjs");
 const Document = require(`../models/document`)(sequelize, DataTypes);
 
 class DocumentService{
@@ -11,25 +12,41 @@ class DocumentService{
         return await newDocument.save();
     }
 
-    async searchDocuments({offset = 0, limit = 20, search = ''}) {
+    async searchDocuments({offset = 0, limit = 20, search = '', creatorId}) {
+        const creatorIdQuery = creatorId ? {
+            [Op.and]: {
+                creatorId
+            }
+        } : undefined
         return await Document.findAndCountAll({
             where:
                 {
                     [Op.or]: {
                         name: {
                             [Op.substring]: search
-                        },
-                        uri: {
-                            [Op.substring]: search
-                        },
-                        creatorId: {
-                            [Op.substring]: search
                         }
-                    }
+                    },
+                    ...creatorIdQuery
                 },
             offset,
             limit
         })
+    }
+
+    async getDocumentById(id){
+        return await Document.findOne({
+            where: {
+                id
+            }
+        });
+    }
+
+    async updateDocument(document, patch){
+        document.set({
+            ...patch
+        });
+
+        return await document.save()
     }
 
     async deleteDocument(id) {
