@@ -11,7 +11,9 @@ Online version is deploy on Heroku : https://nodejs-iim-a4-grp2.herokuapp.com/
   - [PR template](#pr-template)
   - [API documentation](#api-documentation)
   - [Sequelize (Database)](#sequelize-database)
-
+- [Online link](#online-link)
+  - [Preproduction](#preproduction)
+  - [Production](#production)
 
 ### Getting Started
 
@@ -95,3 +97,13 @@ This will be of use to fill your database with data, fixtures for exemple.
 This will add the seeders into the database
 
 `npx sequelize-cli db:seed:all`
+
+
+
+### Online link
+
+#### Preproduction
+  - https://iim-node-equipe1-preprod.herokuapp.com/
+
+#### Production
+ - https://iim-node-equipe1-prod.herokuapp.com/

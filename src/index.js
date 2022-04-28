@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const port = process.env.PORT || 3000;
 const mainRouter = require("./routes/main");
 const usersRouter = require("./routes/users");
+const documentsRouter = require("./routes/documents")
 const express = require("express");
 const { createServer } = require("http");
 const { Server } = require("socket.io");
@@ -37,6 +38,7 @@ httpServer.listen(port, async () => {
 });
 app.use("/", mainRouter);
 app.use("/users", usersRouter);
+app.use("/documents", documentsRouter);
 
 // Socket IO
 io.on("connection", (socket) => {
