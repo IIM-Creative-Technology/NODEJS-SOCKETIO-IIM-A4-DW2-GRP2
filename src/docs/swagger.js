@@ -9,8 +9,8 @@ const doc = {
   schemes: ["http"],
 };
 
-const outputFile = "./docs/swagger.json";
-const endpointsFiles = ["./index.js"];
+const outputFile = "src/docs/swagger.json";
+const endpointsFiles = ["src/index.js"];
 
 /* NOTE: if you use the express Router, you must pass in the
    'endpointsFiles' only the root file where the route starts,
