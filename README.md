@@ -1,5 +1,4 @@
 d# NODEJS-SOCKETIO-IIM-A4-DW2-GRP2
-Online version is deploy on Heroku : https://nodejs-iim-a4-grp2.herokuapp.com/
 
 ---
 
@@ -107,3 +106,7 @@ This will add the seeders into the database
 
 #### Production
  - https://iim-node-equipe1-prod.herokuapp.com/
+
+#### Postman collection
+
+https://drive.google.com/file/d/1s0qmsazz8PSfFL_QlQhR-VEWigxpkVe1/view?usp=sharing
