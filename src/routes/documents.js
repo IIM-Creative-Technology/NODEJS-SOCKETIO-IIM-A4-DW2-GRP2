@@ -49,3 +49,5 @@ router.delete("/:id", async (req, res) => {
         res.send("An error occured when deleting document");
     }
 });
+
+module.exports = router;
