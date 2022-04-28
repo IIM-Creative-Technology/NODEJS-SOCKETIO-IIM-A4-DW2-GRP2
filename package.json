@@ -20,13 +20,14 @@
     "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0",
+    "cz-conventional-changelog": "^3.0.1",
+    "jest": "^28.0.2",
     "nodemon": "^2.0.15",
     "sequelize-cli": "^6.4.1"
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "cz-conventional-changelog"
     }
   }
 }
