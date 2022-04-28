@@ -1,5 +1,5 @@
 const {DataTypes} = require("sequelize");
-const {Op} = require("sequelize/types");
+const {Op} = require("sequelize");
 const sequelize = require("../models").sequelize;
 
 const Document = require(`../models/document`)(sequelize, DataTypes);
