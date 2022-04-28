@@ -7,6 +7,7 @@ router.post("/", (req, res) => {
     // #swagger.summary = 'Create a new document';
     // #swagger.tags = ['Documents']
     try {
+        console.log(req.body)
         const result = documentService.createDocument(req.body);
         res.send(result);
     } catch (error) {
