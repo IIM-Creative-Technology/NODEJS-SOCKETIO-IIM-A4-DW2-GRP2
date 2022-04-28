@@ -53,7 +53,7 @@ router.get("/:id", authJwt, async (req, res) => {
         const user = await userService.findUserById(req.params.id);
 
         if(user){
-            if(user.id !== req.user.id && !user.isAdmin){
+            if(user.id !== req.user.id && !req.user.isAdmin){
                 res.status(403).send({message:'Not authorized'})
                 return
             }
@@ -93,7 +93,7 @@ router.patch("/:id", authJwt, async (req, res) => {
         const user = await userService.findUserById(req.params.id);
 
         if(user){
-            if(user.id !== req.user.id && !user.isAdmin){
+            if(user.id !== req.user.id && !req.user.isAdmin){
                 res.status(403).send({message:'Not authorized'})
                 return
             }
@@ -123,7 +123,7 @@ router.delete("/:id", authJwt, async (req, res) => {
         const user = await userService.findUserById(req.params.id);
 
         if(user){
-            if(user.id !== req.user.id && !user.isAdmin){
+            if(user.id !== req.user.id && !req.user.isAdmin){
                 res.status(403).send({message:'Not authorized'})
                 return
             }
