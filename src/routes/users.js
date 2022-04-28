@@ -93,7 +93,7 @@ router.patch("/:id", authJwt, async (req, res) => {
         const user = await userService.findUserById(req.params.id);
 
         if(user){
-            if(user.id !== req.user.id){
+            if(user.id !== req.user.id || !user.isAdmin){
                 res.status(403).send({message:'Not authorized'})
                 return
             }
